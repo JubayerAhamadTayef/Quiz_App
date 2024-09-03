@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.quiz_app.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class StartActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
