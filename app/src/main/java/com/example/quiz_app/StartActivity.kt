@@ -1,5 +1,6 @@
 package com.example.quiz_app
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -27,6 +28,13 @@ class StartActivity : AppCompatActivity() {
             darkTheme.setOnClickListener {
 
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+
+            }
+
+            startBtn.setOnClickListener {
+
+                intent = Intent(this@StartActivity, QuizActivity::class.java)
+                startActivity(intent)
 
             }
 
