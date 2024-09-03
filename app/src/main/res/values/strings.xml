@@ -5,4 +5,5 @@
     <string name="light_theme">Light Theme</string>
     <string name="dark_theme">Dark Theme</string>
     <string name="quiz_number">1/5</string>
+    <string name="question">What is the Question?</string>
 </resources>
