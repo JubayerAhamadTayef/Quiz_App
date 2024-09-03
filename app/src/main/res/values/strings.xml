@@ -6,4 +6,8 @@
     <string name="dark_theme">Dark Theme</string>
     <string name="quiz_number">1/5</string>
     <string name="question">What is the Question?</string>
+    <string name="option_1">Option 1</string>
+    <string name="option_2">Option 2</string>
+    <string name="option_3">Option 3</string>
+    <string name="option_4">Option 4</string>
 </resources>
