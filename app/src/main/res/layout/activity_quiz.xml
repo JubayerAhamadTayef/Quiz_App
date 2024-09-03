@@ -100,4 +100,16 @@
 
     </RadioGroup>
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/SubmitBtn"
+        style="@style/buttonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/submit_answer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/optionGroup" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
