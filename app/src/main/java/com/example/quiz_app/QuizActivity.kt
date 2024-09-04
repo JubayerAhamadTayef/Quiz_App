@@ -1,9 +1,11 @@
 package com.example.quiz_app
 
 import android.annotation.SuppressLint
+import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.widget.RadioButton
-import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.quiz_app.databinding.ActivityQuizBinding
 
@@ -109,9 +111,6 @@ class QuizActivity : AppCompatActivity() {
 
             } else {
 
-                Toast.makeText(this@QuizActivity, "All quiz are finished!", Toast.LENGTH_LONG)
-                    .show()
-
             }
 
             optionGroup.clearCheck()
@@ -148,4 +147,19 @@ class QuizActivity : AppCompatActivity() {
         }
     }
 
+    private fun showAlertDialog(title: String) {
+
+        val builder = AlertDialog.Builder(this)
+
+        builder.setTitle(title)
+
+        builder.setPositiveButton("Ok", object : DialogInterface.OnClickListener {
+            override fun onClick(p0: DialogInterface?, p1: Int) {
+
+            }
+        })
+
+        builder.create().show()
+
+    }
 }
