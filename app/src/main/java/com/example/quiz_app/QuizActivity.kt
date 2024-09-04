@@ -111,6 +111,8 @@ class QuizActivity : AppCompatActivity() {
 
             } else {
 
+                showAlertDialog("Finished")
+
             }
 
             optionGroup.clearCheck()
@@ -126,6 +128,7 @@ class QuizActivity : AppCompatActivity() {
             if (optionGroup.checkedRadioButtonId == -1) {
 
                 totalSkipAnswer++
+                showAlertDialog("You Skip this Answer!")
 
             } else {
 
@@ -135,10 +138,12 @@ class QuizActivity : AppCompatActivity() {
                 if (checkAnswer == quizList[index].correctAnswer) {
 
                     totalCorrectAnswer++
+                    showAlertDialog("Correct Answer!")
 
                 } else {
 
                     totalWrongAnswer++
+                    showAlertDialog("Wrong Answer!")
 
                 }
 
@@ -156,10 +161,23 @@ class QuizActivity : AppCompatActivity() {
         builder.setPositiveButton("Ok", object : DialogInterface.OnClickListener {
             override fun onClick(p0: DialogInterface?, p1: Int) {
 
+                if (title == "Finished") {
+
+                    intent = Intent(this@QuizActivity, QuizResultActivity::class.java)
+
+                    intent.putExtra("Total Skip Answer:", totalSkipAnswer)
+                    intent.putExtra("Total Correct Answer:", totalCorrectAnswer)
+                    intent.putExtra("Total Wrong Answer:", totalWrongAnswer)
+
+                    startActivity(intent)
+
+                }
+
             }
         })
 
         builder.create().show()
 
     }
+
 }
