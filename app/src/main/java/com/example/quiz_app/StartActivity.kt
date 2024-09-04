@@ -4,15 +4,15 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import com.example.quiz_app.databinding.ActivityMainBinding
+import com.example.quiz_app.databinding.ActivityStartBinding
 
 class StartActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityStartBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityStartBinding.inflate(layoutInflater)
 
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
