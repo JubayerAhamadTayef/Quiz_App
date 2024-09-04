@@ -1,6 +1,9 @@
 package com.example.quiz_app
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.widget.RadioButton
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.quiz_app.databinding.ActivityQuizBinding
 
@@ -9,7 +12,10 @@ class QuizActivity : AppCompatActivity() {
     private lateinit var binding: ActivityQuizBinding
 
     private var index = 0
-    private var isFinished = false
+
+    private var totalSkipAnswer = 0
+    private var totalCorrectAnswer = 0
+    private var totalWrongAnswer = 0
 
     private val quizList = listOf(
         Quiz(
@@ -71,6 +77,7 @@ class QuizActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun getQuiz() {
 
         val quiz = quizList[index]
@@ -91,6 +98,8 @@ class QuizActivity : AppCompatActivity() {
 
     private fun getNextQuiz() {
 
+        checkAnswer()
+
         binding.apply {
 
             if (index < (quizList.size - 1)) {
@@ -100,12 +109,43 @@ class QuizActivity : AppCompatActivity() {
 
             } else {
 
-                isFinished = true
+                Toast.makeText(this@QuizActivity, "All quiz are finished!", Toast.LENGTH_LONG)
+                    .show()
+
+            }
+
+            optionGroup.clearCheck()
+
+        }
+
+    }
+
+    private fun checkAnswer() {
+
+        binding.apply {
+
+            if (optionGroup.checkedRadioButtonId == -1) {
+
+                totalSkipAnswer++
+
+            } else {
+
+                val checkAnswer =
+                    (findViewById<RadioButton>(binding.optionGroup.checkedRadioButtonId)).text.toString()
+
+                if (checkAnswer == quizList[index].correctAnswer) {
+
+                    totalCorrectAnswer++
+
+                } else {
+
+                    totalWrongAnswer++
+
+                }
 
             }
 
         }
-
     }
 
 }
