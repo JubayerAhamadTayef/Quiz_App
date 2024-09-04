@@ -63,6 +63,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/green"
             android:buttonTintMode="@color/white"
+            android:padding="10dp"
             android:text="@string/option_1"
             android:textAlignment="textStart" />
 
@@ -74,6 +75,7 @@
             android:layout_marginVertical="10dp"
             android:backgroundTint="@color/green"
             android:buttonTintMode="@color/white"
+            android:padding="10dp"
             android:text="@string/option_2"
             android:textAlignment="textStart" />
 
@@ -84,6 +86,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/green"
             android:buttonTintMode="@color/white"
+            android:padding="10dp"
             android:text="@string/option_3"
             android:textAlignment="textStart" />
 
@@ -95,6 +98,7 @@
             android:layout_marginTop="10dp"
             android:backgroundTint="@color/green"
             android:buttonTintMode="@color/white"
+            android:padding="10dp"
             android:text="@string/option_4"
             android:textAlignment="textStart" />
 
