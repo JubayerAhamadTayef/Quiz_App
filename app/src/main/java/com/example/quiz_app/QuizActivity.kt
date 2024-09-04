@@ -8,6 +8,8 @@ class QuizActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityQuizBinding
 
+    private var index = 0
+
     private val quizList = listOf(
         Quiz(
             "What is a correct syntax to output \"Hello World\" in Kotlin?",
@@ -58,6 +60,24 @@ class QuizActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        getQuiz()
+
+    }
+
+    private fun getQuiz() {
+
+        val quiz = quizList[index]
+
+        binding.apply {
+
+            quizQuestion.text = quiz.question
+            option1.text = quiz.option1
+            option2.text = quiz.option2
+            option3.text = quiz.option3
+            option4.text = quiz.option4
+
+        }
 
     }
 
