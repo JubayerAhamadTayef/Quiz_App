@@ -1,6 +1,7 @@
 package com.example.quiz_app
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.quiz_app.databinding.ActivityQuizResultBinding
@@ -22,6 +23,13 @@ class QuizResultActivity : AppCompatActivity() {
             totalSkip.text = "Total Skip Answer: ${intent.getIntExtra("Total Skip Answer:", 0)}"
             totalCorrect.text = "Total Correct Answer: ${intent.getIntExtra("Total Correct Answer:", 0)}"
             totalWrong.text = "Total Wrong Answer: ${intent.getIntExtra("Total Wrong Answer:", 0)}"
+
+            tryAgainBtn.setOnClickListener {
+
+                intent = Intent(this@QuizResultActivity, QuizActivity::class.java)
+                startActivity(intent)
+
+            }
 
         }
 
