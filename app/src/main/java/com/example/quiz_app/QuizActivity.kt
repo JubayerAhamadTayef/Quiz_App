@@ -9,6 +9,7 @@ class QuizActivity : AppCompatActivity() {
     private lateinit var binding: ActivityQuizBinding
 
     private var index = 0
+    private var isFinished = false
 
     private val quizList = listOf(
         Quiz(
@@ -63,6 +64,11 @@ class QuizActivity : AppCompatActivity() {
 
         getQuiz()
 
+        binding.submitBtn.setOnClickListener {
+
+            getNextQuiz()
+
+        }
     }
 
     private fun getQuiz() {
@@ -76,6 +82,27 @@ class QuizActivity : AppCompatActivity() {
             option2.text = quiz.option2
             option3.text = quiz.option3
             option4.text = quiz.option4
+
+            quizNumber.text = "${index + 1}/${quizList.size}"
+
+        }
+
+    }
+
+    private fun getNextQuiz() {
+
+        binding.apply {
+
+            if (index < (quizList.size - 1)) {
+
+                index++
+                getQuiz()
+
+            } else {
+
+                isFinished = true
+
+            }
 
         }
 
